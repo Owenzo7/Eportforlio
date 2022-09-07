@@ -14,6 +14,9 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <!-- Linked Js file to the index.html file -->
+    <script src="app.js"></script>
+
     <!-- CDN Font__Awesome -->
 
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
@@ -54,7 +57,7 @@
                     link__hover-effect--black
                     ">Projects</a>
                 </li>
-                <li class="nav__link">
+                <li class="nav__link" onclick="toggleModal()">
                     <a href="#" class="
                     nav__link--anchor
                     link__hover-effect
@@ -84,7 +87,7 @@
                     applications with great user
                     experiences
                     <br>
-                    Here's a bit more <b class="orange">about me</b>.
+                    Here's a bit more <b class="orange click" onclick="toggleModal()">about me</b>.
                 </p>
                 <div class="social__list">
                     <a href="https://www.linkedin.com/in/owen-rogers-516a381bb/" target = "_blank" class="social__link click">
@@ -101,7 +104,7 @@
 
         </header>
 
-        <button class="mail__btn click">
+        <button class="mail__btn click" onclick="toggleModal()">
 
             <i class="fas fa-envelope"></i>
 
@@ -150,6 +153,8 @@
             </div>
             <div class="modal__half modal__contact">
 
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+
                 <h3 class="modal__title modal__title--contact">
                     Let's have a chat!
                 </h3>
@@ -157,21 +162,21 @@
                    I'm currently open to new opportunities.
                 </h3>
                 
-                <form id="contact__form" action="">
+                <form id="contact__form" onsubmit="contact(event)">
 
                     <div class="form__item">
                         <label class="form__item--label">Name</label>
-                        <input class="input"  name="user_name" type="text" required></input>
+                        <input class="input"  name="user_name" type="text"></input>
                     </div>
 
                     <div class="form__item">
                         <label class="form__item--label">Email</label>
-                        <input class="input"  name="user_email" type="email" required></input>
+                        <input class="input"  name="user_email" type="email"></input>
                     </div>
 
                     <div class="form__item">
                         <label class="form__item--label">Message</label>
-                        <textarea class="input"  name="message" type="text" required></textarea>
+                        <textarea class="input"  name="message" type="text"></textarea>
                     </div>
 
                     <button id="contact__submit" class="form__submit">
@@ -194,7 +199,7 @@
                 
             </div>
 
-            <i class="fas fa-times modal__exit click"></i>
+            
         </div>
     </section>
 
